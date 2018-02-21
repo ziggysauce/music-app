@@ -1,0 +1,38 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "personal portfolio",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/app.js & webpack -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ziggysauce/portfolio.git"
+  },
+  "author": "Dan Nguyen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ziggysauce/portfolio/issues"
+  },
+  "homepage": "https://github.com/ziggysauce/portfolio#readme",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "body-parser": "^1.18.2",
+    "css-loader": "^0.28.9",
+    "express": "^4.16.2",
+    "nodemon": "^1.15.1",
+    "path": "^0.12.7",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.20.2",
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.1"
+  }
+}
