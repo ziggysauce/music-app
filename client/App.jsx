@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Navbar from './components/Navbar.jsx';
-import Footer from './components/Footer.jsx';
+import Navbar from './src/components/Navbar.jsx';
+import Footer from './src/components/Footer.jsx';
 
 
 export default class App extends Component {
