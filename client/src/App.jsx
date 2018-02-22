@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Navbar from './src/components/Navbar.jsx';
-import Footer from './src/components/Footer.jsx';
+import Navbar from './components/Navbar.jsx';
+import Footer from './components/Footer.jsx';
+import Router from './routes/Router.jsx';
 
 
 export default class App extends Component {
@@ -11,6 +12,7 @@ export default class App extends Component {
 		return (
 			<div>
         <Navbar />
+        <Router />
         <Footer />
 			</div>
 		);

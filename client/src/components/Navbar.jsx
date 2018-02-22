@@ -6,7 +6,11 @@ export default class Navbar extends Component {
   render() {
 		return (
 			<div className="navbar">
-        This is from navbar!
+				<p>Brand</p>
+				<div>
+					<button>Sign up</button>
+					<button>Log in</button>
+				</div>
 			</div>
 		);
   }

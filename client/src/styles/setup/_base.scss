@@ -1,4 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   margin: 0;
   padding: 0;
+}
+
+.link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.test {
+  border: 2px solid cyan;
 }
