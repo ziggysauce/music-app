@@ -7,9 +7,9 @@ export default class Login extends Component {
 		return (
 			<div>
         <div>
-          <form>
+          <form action="/login" method="post">
             <input type="text" name="username" placeholder="username"/>
-            <input type="text" name="password" placeholder="password"/>
+            <input type="password" name="password" placeholder="password"/>
             <input type="submit"/>
           </form>
           <Link to="/">Go back</Link>				
