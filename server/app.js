@@ -2,6 +2,7 @@ const express = require('express'); // use express methods
 const bodyParser = require('body-parser'); // allows form data to be available in req.body
 const path = require('path'); //joins path segments and normalizes resulting path
 require('dotenv').config();
+require('dotenv').load();
 const mongoose = require('mongoose');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
@@ -14,7 +15,8 @@ const router = require('./routes/index');
 const User = require('./models/user');
 
 const app = express();
-const PORT = 5000;
+// const PORT = 5000;
+const PORT = process.env.PORT;
 
 app.use(bodyParser.urlencoded({extended: true})); // returns middleware that only parses urlencoded bodies; extended allows for the qs library
 app.use(express.static(path.join(__dirname, '../client'))); // joins current path with client path

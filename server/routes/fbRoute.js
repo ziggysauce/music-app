@@ -1,6 +1,7 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 const passport = require('passport');
+
 
 /*
  * GET ROUTE
@@ -16,7 +17,7 @@ router.get('/auth/facebook', passport.authenticate('facebook', {
  */
 router.get('/auth/facebook/callback',
   passport.authenticate('facebook', {
-    successRedirect : '/',
+    successRedirect : '/user/profile',
     failureRedirect : '/login'
   }));
 

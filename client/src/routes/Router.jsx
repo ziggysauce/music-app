@@ -25,6 +25,7 @@ const AppRouter = () => (
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/user/:id" component={User} />
+            <Route path="/user/profile" component={User} />
             <Route exact path="/playlist" component={Playlist} />
             <Route path="/playlist/:id" component={PlaylistPage} />
             <Route path="/signup" component={Signup} />
