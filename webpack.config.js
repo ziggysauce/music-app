@@ -17,7 +17,9 @@ module.exports = {
   output: { //create output path
     filename: 'bundle.js',
     path: PUBLIC,
-    publicPath: '/public'
+    publicPath: '/public',
+    hotUpdateChunkFilename: 'hot/hot-update.js',
+    hotUpdateMainFilename: 'hot/hot-update.json'
   },
   devServer: {
     historyApiFallback: true
