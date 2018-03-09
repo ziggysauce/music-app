@@ -14,7 +14,7 @@ export default class Dashboard extends Component {
 				<div className="dash-bottom">
           <NavLink to="/signup" className="nav-link">Sign up</NavLink>
           <NavLink to="/login" className="nav-link">Log in</NavLink>
-          <a href="/logout" className="nav-link">Log out</a>
+          <a href="/routes/logout" className="nav-link">Log out</a>
 				</div>
 			</div>
 		);

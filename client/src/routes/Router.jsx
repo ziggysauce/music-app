@@ -24,7 +24,7 @@ const AppRouter = () => (
         <div className="main-page">
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/users/:id" component={User} />
+            <Route path="/user/:id" component={User} />
             <Route exact path="/playlist" component={Playlist} />
             <Route path="/playlist/:id" component={PlaylistPage} />
             <Route path="/signup" component={Signup} />

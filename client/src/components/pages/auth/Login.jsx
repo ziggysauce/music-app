@@ -12,7 +12,7 @@ export default class Login extends Component {
             <input type="password" name="password" placeholder="password"/>
             <input type="submit"/>
           </form>
-          <a href="/auth/facebook" className="button">Facebook</a>
+          <a href="/routes/auth/facebook" className="button">Facebook</a>
           <Link to="/">Go back</Link>				
         </div>
 			</div>

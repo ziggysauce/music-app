@@ -10,7 +10,7 @@ export default class Navbar extends Component {
 				<div>
 					<NavLink to="/signup">Sign up</NavLink>
 					<NavLink to="/login">Log in</NavLink>
-					<a href="/logout">Log out</a>
+					<a href="/routes/logout">Log out</a>
 				</div>
 			</div>
 		);
