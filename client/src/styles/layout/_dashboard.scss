@@ -1,0 +1,29 @@
+.dashboard {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 15em;
+    padding: 1em;
+    background: $off-black;
+    color: $off-white;
+  }
+
+  .dash-top, .dash-bottom {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dash-top {
+  
+  }
+  
+  .dash-bottom {
+  
+  }
+}

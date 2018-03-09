@@ -7,7 +7,7 @@ export default class Signup extends Component {
 		return (
 			<div>
 				<div>
-          <form action="/signup" method="post">
+          <form action="/routes/signup" method="post">
             <input type="text" name="username" placeholder="username"/>
             <input type="password" name="password" placeholder="password"/>
             <input type="submit"/>

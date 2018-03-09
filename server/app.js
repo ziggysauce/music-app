@@ -5,12 +5,13 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+const morgan = require("morgan");
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 
 // Require routes & models
-const routes = require('./routes/index');
+const router = require('./routes/index');
 const User = require('./models/user');
-
 
 const app = express();
 const PORT = 5000;
@@ -18,7 +19,9 @@ const PORT = 5000;
 app.use(bodyParser.urlencoded({extended: true})); // returns middleware that only parses urlencoded bodies; extended allows for the qs library
 app.use(express.static(path.join(__dirname, '../client'))); // joins current path with client path
 app.use(bodyParser.json()); // looks for JSON data
-app.use(cookieParser());
+app.use(morgan('dev')); // log every request to the console
+app.use(cookieParser()); // read cookies (needed for auth)
+app.use(cors()); // cors middleware for auth
 
 const url = process.env.MONGODB_URI || "mongodb://localhost:27017/music_app"
 mongoose.connect(url);
@@ -31,12 +34,18 @@ app.use(require('express-session')({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-passport.use(new LocalStrategy(User.authenticate()));
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+// Passport for local, google, and facebook
+require("./config/passport")(passport);
 
-app.use('/', routes);
 
+// MIDDLEWARE
+// Calls on every route (DRY)
+app.use((req,res,next) => {
+  res.locals.currentUser = req.user;
+  next();
+});
+
+app.use('/routes', router);
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/index.html'));
 });
@@ -47,10 +56,6 @@ app.use((req, res, next) => {
   err.status = 404;
   next(err);
 });
-
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../../client/index.html'));
-// });
 
 // start app on specified port
 app.listen(PORT, (err) => {

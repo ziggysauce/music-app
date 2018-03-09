@@ -7,11 +7,12 @@ export default class Login extends Component {
 		return (
 			<div>
         <div>
-          <form action="/login" method="post">
+          <form action="/routes/login" method="post">
             <input type="text" name="username" placeholder="username"/>
             <input type="password" name="password" placeholder="password"/>
             <input type="submit"/>
           </form>
+          <a href="/auth/facebook" className="button">Facebook</a>
           <Link to="/">Go back</Link>				
         </div>
 			</div>
