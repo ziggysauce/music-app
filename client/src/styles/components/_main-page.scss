@@ -1,6 +1,20 @@
+.full-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.center-page {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid orange;
+  min-height: calc(100vh - 10em);
+}
+
 .main-page {
-  // border: 1px solid green;
-  min-height: 100vh;
+  border: 1px solid green;
+  // height: 100%;
+  width: 100%;
+  margin-left: 15em;
   display: flex;
   justify-content: center;
   align-items: center;

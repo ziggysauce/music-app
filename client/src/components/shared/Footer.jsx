@@ -6,10 +6,13 @@ export default class Footer extends Component {
 		return (
 			<div className="footer">
 				<div>
-					<p>Brand</p>
-					<a className="link footer__link" href="#">Link 1</a>
-					<a className="link footer__link" href="#">Link 2</a>
-					<a className="link footer__link" href="#">Link 3</a>
+					Music Info
+				</div>
+				<div>
+					Music Controls
+				</div>
+				<div>
+					Additional
 				</div>
 			</div>
 		);

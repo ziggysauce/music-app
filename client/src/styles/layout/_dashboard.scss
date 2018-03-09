@@ -1,0 +1,25 @@
+.dashboard {
+  border: 2px solid red;
+  // height: 90vh;
+  width: 15em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 1em;
+  background: $off-black;
+  color: $off-white;
+}
+
+.dash-top, .dash-bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.dash-top {
+
+}
+
+.dash-bottom {
+
+}
