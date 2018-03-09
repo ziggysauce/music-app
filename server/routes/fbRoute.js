@@ -15,11 +15,19 @@ router.get('/auth/facebook', passport.authenticate('facebook', {
  * GET ROUTE
  * Facebook callback after authenticating user
  */
-router.get('/auth/facebook/callback',
-  passport.authenticate('facebook', {
+router.get('/auth/facebook/callback', passport.authenticate('facebook', {
     successRedirect : '/user/profile',
     failureRedirect : '/login'
   }));
+
+/*
+ * GET ROUTE
+ * READ -- Get facebook login user information
+ */
+router.get('/auth', (req, res) => {
+  console.log(req.user.facebook);
+  res.send({ user: req.user.facebook.name });
+});
 
 /*
  * GET ROUTE

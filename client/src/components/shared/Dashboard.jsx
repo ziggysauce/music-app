@@ -9,7 +9,7 @@ export default class Dashboard extends Component {
         <div className="dash-top">
           <p>Brand</p>
           <input placeholder="search for music..."/>
-          <NavLink to="/profile" className="nav-link">Profile</NavLink>
+          <NavLink to="/user/profile" className="nav-link">Profile</NavLink>
         </div>
 				<div className="dash-bottom">
           <NavLink to="/signup" className="nav-link">Sign up</NavLink>

@@ -3,25 +3,25 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 class User extends Component {
-	componentWillMount() {
-		console.log('willmount');
-		axios.get('/routes/users/daniel')
-			.then((response) => {
-				console.log('this is the respons: ', response);
-			});
+	state = {
+		user: ''
 	}
 
 	componentDidMount() {
 		console.log('didmount');
+		axios.get('/routes/auth')
+			.then((response) => {
+				this.setState({ user: response.data.user });
+			});
 	}
 
 	render() {
-		console.log('this is from user');
+		console.log('this is from user: ', this.state);
 
 		return (
 			<div>
 				<div>
-					<p>This is asdasd's profile page!</p>
+					<p>This is {this.state.user.length > 0 ? this.state.user : 'user'}'s profile page!</p>
 					<Link to="/">Go back</Link>
 				</div>
 			</div>
