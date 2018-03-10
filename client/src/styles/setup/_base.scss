@@ -5,6 +5,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  font-family: 'Mina', sans-serif;
 }
 
 .nav-link {
@@ -17,9 +18,14 @@ html, body {
   }
 }
 
-.link {
+a {
   text-decoration: none;
   cursor: pointer;
+  color: $link;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 form {
@@ -42,8 +48,4 @@ form {
   &:hover {
     transition: 0.3s;
   }
-}
-
-.test {
-  border: 2px solid cyan;
 }

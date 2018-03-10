@@ -12,8 +12,13 @@ export default class Dashboard extends Component {
           <p>Brand</p>
           {this.props.user ? <DashTopUser user={this.props.user}/> : <DashTopGuest/>}
         </div>
-				<div className="dash-bottom">
-          Social Media Links
+        <div className="dash-bottom">
+          <span>Follow us!</span>
+          <div className="social-media">
+            <a href="#"><i className="fab fa-facebook"></i></a>
+            <a href="#"><i className="fab fa-twitter"></i></a>
+            <a href="#"><i className="fab fa-instagram"></i></a>
+          </div>
 				</div>
 			</div>
 		);
