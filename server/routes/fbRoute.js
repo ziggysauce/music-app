@@ -25,8 +25,11 @@ router.get('/auth/facebook/callback', passport.authenticate('facebook', {
  * READ -- Get facebook login user information
  */
 router.get('/auth', (req, res) => {
-  console.log(req.user.facebook);
-  res.send({ user: req.user.facebook.name });
+  if (req.user) {
+    console.log(req.user.facebook);
+    res.send({ user: req.user.facebook.name });
+  }
+  res.send({ user: null });
 });
 
 /*

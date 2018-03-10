@@ -6,8 +6,13 @@ export default class Navbar extends Component {
   render() {
 		return (
 			<div className="navbar">
-				<p>Brand</p>
 				<div>
+					Brand
+				</div>
+				<div className="nav-toggle">
+					. . .
+				</div>
+				<div className="nav-open">
 					<NavLink to="/signup">Sign up</NavLink>
 					<NavLink to="/login">Log in</NavLink>
 					<a href="/routes/logout">Log out</a>

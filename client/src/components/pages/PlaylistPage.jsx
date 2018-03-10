@@ -13,4 +13,4 @@ const PlaylistPage = (props) => {
   );
 };
 
-export default PlaylistPage
+export default PlaylistPage;
