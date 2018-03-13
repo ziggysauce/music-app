@@ -62,3 +62,7 @@ typings/
 
 # HMR Chunks
 client/public/hot
+
+# Config file
+server/config
+** server/config
