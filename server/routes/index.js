@@ -5,6 +5,6 @@ const userRouter  = require('./userRoute');
 const fbRouter  = require('./fbRoute');
 
 router.use('/', userRouter);
-router.use('/', fbRouter);
+router.use('/auth', fbRouter);
 
 module.exports = router;

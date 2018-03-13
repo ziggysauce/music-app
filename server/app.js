@@ -5,7 +5,6 @@ require('dotenv').config();
 require('dotenv').load();
 const mongoose = require('mongoose');
 const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
 const morgan = require("morgan");
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
@@ -39,15 +38,8 @@ app.use(passport.session());
 // Passport for local, google, and facebook
 require("./config/passport")(passport);
 
-
-// MIDDLEWARE
-// Calls on every route (DRY)
-app.use((req,res,next) => {
-  res.locals.currentUser = req.user;
-  next();
-});
-
 app.use('/routes', router);
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/index.html'));
 });

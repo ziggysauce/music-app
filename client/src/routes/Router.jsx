@@ -22,14 +22,14 @@ class AppRouter extends Component {
   }
 
   componentDidMount() {
-		console.log('didmount');
-		axios.get('/routes/auth')
-			.then((response) => {
-				this.setState({ user: response.data.user });
-			})
-			.catch((err) => {
-				console.log('Error retrieving user: ', err);
-			});
+		// console.log('didmount');
+		// axios.get('/routes/auth')
+		// 	.then((response) => {
+		// 		this.setState({ user: response.data.user });
+		// 	})
+		// 	.catch((err) => {
+		// 		console.log('Error retrieving user: ', err);
+		// 	});
   }
   
   handleLocalLogin = (user) => {
