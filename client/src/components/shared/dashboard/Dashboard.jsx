@@ -9,7 +9,7 @@ export default class Dashboard extends Component {
 		return (
       <div className="dashboard">
         <div className="dash-top">
-          <p>Brand</p>
+          <p className="brand">Plaze</p>
           {this.props.user ? <DashTopUser user={this.props.user}/> : <DashTopGuest/>}
         </div>
         <div className="dash-bottom">

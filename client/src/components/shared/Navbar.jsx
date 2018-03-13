@@ -6,9 +6,7 @@ export default class Navbar extends Component {
   render() {
 		return (
 			<div className="navbar">
-				<div>
-					Brand
-				</div>
+				<p className="brand">Plaze</p>
 				<div className="nav-toggle">
 					. . .
 				</div>
