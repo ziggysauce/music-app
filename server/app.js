@@ -36,7 +36,7 @@ app.use(require('express-session')({
 app.use(passport.initialize());
 app.use(passport.session());
 // Passport for local, google, and facebook
-require("./config/passport")(passport);
+require("./passport/passport")(passport);
 
 app.use('/routes', router);
 

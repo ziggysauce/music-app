@@ -5,7 +5,7 @@ import DashTopGuest from './DashTopGuest.jsx';
 
 export default class Dashboard extends Component {
   render() {
-    // console.log('from dashboard: ', this.props);
+    console.log('from dashboard: ', this.props);
 		return (
       <div className="dashboard">
         <div className="dash-top">

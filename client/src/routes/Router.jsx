@@ -32,7 +32,7 @@ class AppRouter extends Component {
 		// 	});
   }
   
-  handleLocalLogin = (user) => {
+  handleLogin = (user) => {
     this.setState({ user: user });
   }
 
@@ -52,7 +52,7 @@ class AppRouter extends Component {
                 render={(props) => (<User
                   props={props}
                   user={this.state.user}
-                  handleLocalLogin={this.handleLocalLogin}
+                  handleLogin={this.handleLogin}
                 />)} 
               />
               <Route 
@@ -60,6 +60,7 @@ class AppRouter extends Component {
                 render={(props) => (<User
                   props={props}
                   user={this.state.user}
+                  handleLogin={this.handleLogin}
                 />)}              
               />
               <Route exact path="/playlist" component={Playlist} />
