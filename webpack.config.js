@@ -33,8 +33,15 @@ module.exports = {
       },
       {
         test: /\.(css|sass|scss)$/, // checks for any files ending in .css, .sass, or .scss
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-      }
+        use: ['style-loader', 'css-loader', 'sass-loader', 'resolve-url-loader'],
+      },
+      {
+        test: /\.(woff2?|ttf|otf|eot|svg)$/,
+        loader: 'file-loader',
+        options: {
+          name: './client/src/styles/assets/fonts/BEYNO.ttf'
+        }
+    }
     ]
   },
   plugins: [
