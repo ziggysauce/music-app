@@ -22,12 +22,17 @@ router.get('/facebook/callback', passport.authenticate('facebook', {
 
 /*
  * GET ROUTE
- * READ -- Get facebook login user information
+ * READ -- Get facebook/google login user information
  */
 router.get('/', (req, res) => {
   if (req.user) {
-    console.log(req.user.facebook);
-    res.send({ user: req.user.facebook.name });
+    console.log('FROM ROUTES, FB USER: ', req.user.facebook);
+    console.log('FROM ROUTES, GOOGLE USER: ', req.user.google);
+    if (req.user.facebook.fb_id) {
+      res.send({ user: req.user.facebook.name });
+    } else {
+      res.send({ user: req.user.google.name });
+    }
   }
   res.send({ user: null });
 });

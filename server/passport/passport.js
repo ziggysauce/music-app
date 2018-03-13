@@ -1,7 +1,7 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const FacebookStrategy = require('passport-facebook').Strategy;
-// const GoogleStrategy = require("passport-google-oauth20").Strategy;
+const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const mongoose = require('mongoose');
 const User = require('../models/user');
 const configAuth = require('../config');
@@ -25,7 +25,7 @@ module.exports = (passport) => {
 
   /*
    * Facebook-Local-Strategy Configuration
-   * Facebook Login
+   * Facebook Login/Signup
    */
   passport.use(new FacebookStrategy({
     clientID: configAuth.facebookAuth.clientID,
@@ -48,10 +48,9 @@ module.exports = (passport) => {
         console.log('this is the fb profile: ', profile);
         const newUser = new User();
         // set facebook information in user model
-        newUser.facebook.id = profile.id;                 
+        newUser.facebook.fb_id = profile.id;                 
         newUser.facebook.token = token;                   
-        newUser.facebook.name  = `${profile.name.givenName} ${profile.name.familyName}`;
-        newUser.facebook.email = profile.emails[0].value;
+        newUser.facebook.name  = profile.displayName;
         // save user to database
         newUser.save((err) => {
           if (err) {
@@ -59,6 +58,43 @@ module.exports = (passport) => {
           }
           // if successful, return new user
           return done(null, newUser);
+          });
+        }
+      });
+    });
+  }));
+
+  /*
+   * Google-Local-Strategy Configuration
+   * Google Login/Signup
+   */
+    passport.use(new GoogleStrategy({
+      clientID: configAuth.googleAuth.clientID,
+      clientSecret: configAuth.googleAuth.clientSecret,
+      callbackURL: configAuth.googleAuth.callbackURL,
+  }, (token, refreshToken, profile, done) => {
+    // User.findOne won't fire until we have all our data back from Google
+    process.nextTick(() => {
+      // find user based on their google id
+      User.findOne({ 'google.id': profile.id }, (err, user) => {
+        if (err)
+          return done(err);
+        if (user) {
+          // if user is found, log in
+          console.log('FOUND GOOGLE USER: ', user);
+          return done(null, user);
+        } else {
+          // if the user isn't database, create new user
+          const newUser = new User();
+          newUser.google.google_id = profile.id;
+          newUser.google.token = token;
+          newUser.google.name = profile.displayName;
+          newUser.google.email = profile.emails[0].value;
+          // save user to database
+          newUser.save((err) => {
+            if (err)
+              throw err;
+            return done(null, newUser);
           });
         }
       });

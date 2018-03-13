@@ -24,6 +24,7 @@ class User extends Component {
 		console.log('===================================');
 		axios.get('/routes/auth')
 			.then((response) => {
+				console.log(response.data);
 				this.props.handleLogin(response.data.user);
 			})
 			.catch((err) => {
@@ -48,9 +49,10 @@ class User extends Component {
 
 	componentDidMount() {
 		console.log('USER.JSX DID MOUNT, PROPS: ', this.props.props);
-		console.log('HASH: ', this.props.props.location);
-		if (this.props.props.location.hash.length > 0) {
+		console.log('HASH: ', this.props.props.location.hash);
+		if (this.props.props.match.params.id === 'profile') {
 			// FB AUTH
+			console.log('THIS SHOULD BE HIT');
 			this.handleFbAuth();
 		} else if (this.props.props.match.params.id !== 'profile') {
 			// LOCAL AUTH

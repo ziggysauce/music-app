@@ -8,13 +8,12 @@ const User = new Schema({
     password: String,
   },
   facebook: {
-    id: String,
+    fb_id: String,
     token: String,
-    email: String,
     name: String
   },
   google: {
-    id: String,
+    google_id: String,
     token: String,
     email: String,
     name: String
