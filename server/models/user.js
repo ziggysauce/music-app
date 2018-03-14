@@ -17,9 +17,15 @@ const User = new Schema({
     token: String,
     email: String,
     name: String
+  },
+  twitter: {
+    twitter_id: String,
+    token: String,
+    username: String,
+    displayName: String
   }
 });
 
-User.plugin(passportLocalMongoose);
+User.plugin(passportLocalMongoose, { usernameField : 'userName' });
 
 module.exports = mongoose.model('User', User);

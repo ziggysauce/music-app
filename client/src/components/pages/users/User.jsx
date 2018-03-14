@@ -67,6 +67,9 @@ class User extends Component {
 			<div>
 				<div>
 					<p>USER PROFILE PAGE</p>
+					<a href="routes/connect/google" className="button google-button"><span className="auth-icon"><i className="fab fa-google-plus-g"></i></span> Connect with Google</a>
+					<a href="routes/connect/facebook" className="button facebook-button"><span className="auth-icon"><i className="fab fa-facebook"></i></span> Connect with Facebook</a>
+					<a href="routes/connect/twitter" className="button twitter-button"><span className="auth-icon"><i className="fab fa-twitter"></i></span> Connect with Twitter</a>
 					<Link to="/">Go back</Link>
 				</div>
 			</div>

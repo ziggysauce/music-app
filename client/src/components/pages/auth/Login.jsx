@@ -14,6 +14,9 @@ export default class Login extends Component {
           <form className="auth-form" action="/routes/auth/facebook" method="get">
             <button className="button facebook-button"><span className="auth-icon"><i className="fab fa-facebook"></i></span> Log in with Facebook</button>
           </form>
+          <form className="auth-form" action="/routes/auth/twitter" method="get">
+            <button className="button twitter-button"><span className="auth-icon"><i className="fab fa-twitter"></i></span> Log in with Twitter</button>
+          </form>
         </div>
 
         <div className="divider">

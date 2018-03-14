@@ -10,7 +10,7 @@
   display: flex;
 }
 
-.google-button, .facebook-button {
+.google-button, .facebook-button, .twitter-button {
   color: white;
   display: flex;
   align-items: center;
@@ -31,6 +31,14 @@
 
   &:hover {
     background: darken(#405993, 5%);
+  }
+}
+
+.twitter-button {
+  background: #49AAE7;
+
+  &:hover {
+    background: darken(#49AAE7, 5%);
   }
 }
 

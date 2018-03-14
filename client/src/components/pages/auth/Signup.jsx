@@ -12,8 +12,11 @@ export default class Signup extends Component {
           <form className="auth-form" action="/routes/auth/google" method="get">
             <button className="button google-button"><span className="auth-icon"><i className="fab fa-google-plus-g"></i></span> Sign up with Google</button>
           </form>
-          <form className="signup-form" action="/routes/auth/facebook" method="get">
+          <form className="auth-form" action="/routes/auth/facebook" method="get">
             <button className="button facebook-button"><span className="auth-icon"><i className="fab fa-facebook"></i></span> Sign up with Facebook</button>
+          </form>
+          <form className="auth-form" action="/routes/auth/twitter" method="get">
+            <button className="button twitter-button"><span className="auth-icon"><i className="fab fa-twitter"></i></span> Sign up with Twitter</button>
           </form>
         </div>
 
