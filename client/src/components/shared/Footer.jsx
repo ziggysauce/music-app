@@ -15,12 +15,12 @@ export default class Footer extends Component {
 					</div>
 				</div>
 				<div className="controls__player">
-					<button className="controls__player--button"><i className="fas fa-step-backward"></i></button>
-					<button className="controls__player--button"><i className="fas fa-play"></i></button>
-					<button className="controls__player--button"><i className="fas fa-step-forward"></i></button>
+					<button className="controls__player--button"><i className="ion-ios-skipbackward-outline"></i></button>
+					<button className="controls__player--button"><i className="ion-ios-play-outline"></i></button>
+					<button className="controls__player--button"><i className="ion-ios-skipforward-outline"></i></button>
 				</div>
 				<div className="controls__volume">
-					<span><i className="fas fa-volume-down"></i></span><input type="range"/>
+					<span><i className="ion-volume-medium"></i></span><input type="range"/>
 				</div>
 			</div>
 		);

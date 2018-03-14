@@ -47,9 +47,13 @@
   color: $off-white;
   background: none;
   font-size: 1.5em;
-  margin: 0 0.5em;
+  margin: 0 0.25em;
   cursor: pointer;
   transition: 0.3s;
+
+  &:nth-of-type(2) {
+    font-size: 3.5em;
+  }
 
   &:hover {
     color: $link;
@@ -59,8 +63,10 @@
 
 .controls__volume {
   display: flex;
+  align-items: center;
 
   span {
     margin: 0 1em;
+    font-size: 1.5em;
   }
 }
