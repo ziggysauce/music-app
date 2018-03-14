@@ -10,19 +10,67 @@ const configAuth = require('../config');
 module.exports = (passport) => {
 
   passport.serializeUser((user, done) => {
-    console.log("deserialize; user info: ", user);
     done(null, user._id);
   });
 
   passport.deserializeUser((id, done) => {
     User.findById(id, (err, user) => {
-      console.log("serialize; user info: ", user);
       done(null, user);
     });
   });
 
-  passport.use(new LocalStrategy(User.authenticate()));
+  // passport.use(new LocalStrategy(User.authenticate()));
 
+  /*
+   * Passport-Local-Strategy Configuration
+   * Passport-local Signup
+   */
+  passport.use('local-signup', new LocalStrategy({
+    usernameField : 'username',
+    passwordField : 'password',
+    passReqToCallback : true
+  }, (req, username, password, done) => {
+    process.nextTick(() => {
+      User.findOne({ 'local.username': username }, (err, user) => {
+        if (err)
+          return done(err);
+        if (user) {
+          return done(null, false);
+        } else {
+          // if no user, create new
+          const newUser = new User();
+          newUser.local.username = username;
+          newUser.local.password = newUser.generateHash(password);
+          newUser.save((err) => {
+            if (err)
+              throw err;
+            return done(null, newUser);
+          });
+        }
+      });    
+    });
+  }));
+
+  /*
+   * Passport-Local-Strategy Configuration
+   * Passport-local Login
+   */
+  passport.use('local-login', new LocalStrategy({
+    usernameField : 'username',
+    passwordField : 'password',
+    passReqToCallback : true
+  }, (req, email, password, done) => {
+    // find a user by username
+    User.findOne({ 'local.username': email }, (err, user) => {
+      if (err)
+        return done(err);
+      if (!user)
+        return done(null, false);
+      if (!user.validPassword(password))
+        return done(null, false);
+      return done(null, user);
+    });
+  }));
 
   /*
    * Facebook-Local-Strategy Configuration

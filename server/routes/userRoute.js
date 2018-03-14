@@ -9,30 +9,24 @@ const User = require('../models/user');
  * POST ROUTE
  * CREATE -- Make new user
  */
-router.post('/signup', (req, res) => {
-  User.register(new User({ username : req.body.username }), req.body.password, (err, newUser) => {
-    if (err) {
-      console.log(err);
-      res.send('AN ERROR OCURRED', err);
-    }
-    passport.authenticate('local')(req, res, () => {
-      console.log('new user created: ', newUser);
-      res.redirect('/user/' + newUser._id);
-    });
-  });
+router.post('/signup', passport.authenticate('local-signup', {
+  failureRedirect : '/signup', 
+}), (req, res) => {
+  console.log('successfully signed up: ', req.user);
+  res.redirect('/user/' + req.user._id);
 });
 
 /*
  * POST ROUTE
  * READ -- Login user
  */
-router.post('/login', passport.authenticate('local', {
-  // successRedirect: '/',
-  failureRedirect: '/login',
+router.post('/login', passport.authenticate('local-login', {
+  failureRedirect : '/login', 
 }), (req, res) => {
   console.log('successfully logged in: ', req.user);
   res.redirect('/user/' + req.user._id);
 });
+
 
 /*
  * GET ROUTE
@@ -94,7 +88,7 @@ router.delete('/user/:id', middleware.isLoggedIn, (req,res) => {
 // LOGOUT route
 // /user/logout no 'routes'
 router.get('/logout', (req, res) => {
-  console.log('successfully logged out: ', req.user.username);
+  console.log('successfully logged out: ', req.user);
   req.logout();
   res.redirect('/');
 });

@@ -18,9 +18,9 @@ class User extends Component {
 	// 		this.props.user ? console.log('its not null') : console.log('its null');
 	// }
 
-	handleFbAuth() {
+	handleAuth() {
 		console.log('===================================');
-		console.log('FB AUTHHHHHHH');
+		console.log('SOCIAL MEDIA AUTHHHHHHH');
 		console.log('===================================');
 		axios.get('/routes/auth')
 			.then((response) => {
@@ -51,9 +51,9 @@ class User extends Component {
 		console.log('USER.JSX DID MOUNT, PROPS: ', this.props.props);
 		console.log('HASH: ', this.props.props.location.hash);
 		if (this.props.props.match.params.id === 'profile') {
-			// FB AUTH
+			// AUTH
 			console.log('THIS SHOULD BE HIT');
-			this.handleFbAuth();
+			this.handleAuth();
 		} else if (this.props.props.match.params.id !== 'profile') {
 			// LOCAL AUTH
 			this.handleLocalAuth();
