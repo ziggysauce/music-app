@@ -38,7 +38,8 @@ router.get('/user/:id', (req, res) => {
       console.log('There was a problem: ', err);
       res.redirect('/');
     } else {
-      res.send({ user: foundUser });
+      console.log('USER INFOOO: ', foundUser);
+      res.send({ user: foundUser.local.username });
     }
   });
 });

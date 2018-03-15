@@ -1,0 +1,13 @@
+.connect-auth {
+  display: flex;
+}
+
+.profile-connect {
+  border-radius: 3px;
+  padding: 0 1em;
+  font-size: 0.75em;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
