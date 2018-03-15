@@ -7,10 +7,10 @@ export default class Playlist extends Component {
 		return (
 			<div>
 				<div>
-          <p>This is the playlist page!</p>
-          <Link to="/playlist/1">Playlist One</Link>
-          <Link to="/playlist/2">Playlist Two</Link>
-          <Link to="/">Go back</Link>				
+          <h1>This is the playlist page!</h1>
+          <p><Link to="/playlist/1">Playlist One</Link></p>
+          <p><Link to="/playlist/2">Playlist Two</Link></p>
+          <p><Link to="/">Go back to homepage</Link></p>				
         </div>
 			</div>
 		);

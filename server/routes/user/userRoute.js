@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const path = require('path');
 const passport = require('passport');
-const middleware = require('../middleware')
-const User = require('../models/user');
+const middleware = require('../../middleware')
+const User = require('../../models/user');
 
 /*
  * POST ROUTE

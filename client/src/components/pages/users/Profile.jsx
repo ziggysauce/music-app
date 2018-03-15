@@ -3,11 +3,9 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import ConnectAuth from './ConnectAuth.jsx';
 
-class User extends Component {
+class Profile extends Component {
 	handleAuth() {
-		console.log('===================================');
-		console.log('SOCIAL MEDIA AUTHHHHHHH');
-		console.log('===================================');
+		console.log('SOCIAL MEDIA AUTH HIT');
 		axios.get('/routes/auth')
 			.then((response) => {
 				console.log(response.data);
@@ -19,9 +17,7 @@ class User extends Component {
 	}
 
 	handleLocalAuth() {
-		console.log('===================================');
-		console.log('LOCAL AUTHHHHHHH');
-		console.log('===================================');
+		console.log('LOCAL AUTH HIT');
 		let id = this.props.props.match.params.id;
 		axios.get(`routes/user/${id}`)
 			.then((results) => {
@@ -34,13 +30,12 @@ class User extends Component {
 	}
 
 	componentDidMount() {
-		console.log('USER.JSX DID MOUNT, PROPS: ', this.props.props);
-		console.log('HASH: ', this.props.props.location.hash);
+		// console.log('USER.JSX DID MOUNT, PROPS: ', this.props.props);
+		// console.log('HASH: ', this.props.props.location.hash);
 		// Only call if user is not already logged in
 		if (!this.props.user) {
 			if (this.props.props.match.params.id === 'profile') {
-				// AUTH
-				console.log('THIS SHOULD BE HIT');
+				// GOOGLE/FB/TWITTER AUTH
 				this.handleAuth();
 			} else if (this.props.props.match.params.id !== 'profile') {
 				// LOCAL AUTH
@@ -65,4 +60,4 @@ class User extends Component {
 }
 
 
-export default User;
+export default Profile;

@@ -5,22 +5,20 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family: 'Mina', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .brand {
   font-family: 'BEYNO', sans-serif;
   font-size: 3em;
-}
-
-.nav-link {
-  color: $link;
-  text-decoration: none;
-  cursor: pointer;
-
-  &:hover {
-    text-decoration: underline;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1em;
+  margin: 0;
+  height: 100%;
+  background: lighten($off-black, 5%);
+  color: $off-white;
 }
 
 a {
@@ -29,7 +27,7 @@ a {
   color: $link;
 
   &:hover {
-    text-decoration: underline;
+    color: orange;
   }
 }
 
@@ -52,5 +50,12 @@ form {
 
   &:hover {
     transition: 0.3s;
+  }
+}
+
+@media (min-width: 768px) {
+  .brand {
+    padding: 1em 0;
+    box-shadow: -1px 2px 2px darken($off-black, 10%);
   }
 }

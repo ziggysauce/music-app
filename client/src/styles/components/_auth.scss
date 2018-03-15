@@ -16,6 +16,10 @@
   align-items: center;
   margin: 1em;
   border: none;
+
+  &:hover {
+    color: white;
+  }
 }
 
 .google-button {

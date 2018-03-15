@@ -6,18 +6,54 @@
   .dashboard {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-start;
     width: 15em;
-    padding: 1em;
+    padding: 0 0 1em 0;
     background: $off-black;
     color: $off-white;
+    font-weight: 100;
   }
 
-  .dash-top, .dash-bottom, .dash-wrapper {
+  .dash-top, {
+    // border: 1px solid green;
     display: flex;
     flex-direction: column;
     width: 100%;
+  }
+
+  .dash-wrapper, .dash-bottom, .dash-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 1em;
+  }
+
+  .dash-wrapper {
+    a {
+      padding: .5em 0;
+    }
+  }
+
+  .dash-welcome {
+    margin: 0 0 1em 0;
+
+    p { 
+      margin: 0; 
+
+      &:nth-of-type(2) {
+        font-size: 2em;
+        color: $link;
+      }
+    }
+  }
+
+  .dash-nav {
+    a {
+      padding: 0.5em 0;
+      font-size: 1.3em;
+    }
   }
 
   .social-media {

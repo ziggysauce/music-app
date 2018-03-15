@@ -9,8 +9,36 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1em;
+  padding: 0 1em 0 0;
   display: flex;
+}
+
+.hamburger-nav-icon {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 3em;
+  color: $off-white;
+  padding: 0;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    color: $link;
+    transition: 0.3s;
+  }
+}
+
+.nav-link {
+  color: $off-white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    transition: 0.3s;
+    color: $link;
+  }
 }
 
 .nav-open {

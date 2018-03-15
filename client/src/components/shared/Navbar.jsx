@@ -8,7 +8,7 @@ export default class Navbar extends Component {
 			<div className="navbar">
 				<p className="brand">Plaze</p>
 				<div className="nav-toggle">
-					. . .
+					<button className="hamburger-nav-icon"><i className="ion-navicon"></i></button>
 				</div>
 				<div className="nav-open">
 					<NavLink to="/signup">Sign up</NavLink>

@@ -6,7 +6,7 @@ const PlaylistPage = (props) => {
   return (
     <div>
       <div>
-        <p>This is the {props.match.params.id} playlist page!</p>
+        <h1>This is the {props.match.params.id} playlist page!</h1>
         <Link to="/playlist">Go back</Link>				
       </div>
     </div>

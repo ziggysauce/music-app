@@ -17,7 +17,7 @@ const app = express();
 // const PORT = 5000;
 const PORT = process.env.PORT;
 
-app.use(bodyParser.urlencoded({extended: true})); // returns middleware that only parses urlencoded bodies; extended allows for the qs library
+app.use(bodyParser.urlencoded({ extended: true })); // returns middleware that only parses urlencoded bodies; extended allows for the qs library
 app.use(express.static(path.join(__dirname, '../client'))); // joins current path with client path
 app.use(bodyParser.json()); // looks for JSON data
 app.use(morgan('dev')); // log every request to the console

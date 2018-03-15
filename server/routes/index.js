@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-const userRouter  = require('./userRoute');
-const fbRouter  = require('./fbRoute');
-const googleRouter  = require('./googleRoute');
-const twitterRouter  = require('./twitterRoute');
-const connectAuthRouter  = require('./connectAuthRoute');
+const userRouter  = require('./user/userRoute');
+const fbRouter  = require('./user/fbRoute');
+const googleRouter  = require('./user/googleRoute');
+const twitterRouter  = require('./user/twitterRoute');
+const connectAuthRouter  = require('./user/connectAuthRoute');
 
 router.use('/', userRouter);
 router.use('/auth', fbRouter);

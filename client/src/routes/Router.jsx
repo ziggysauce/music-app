@@ -10,11 +10,13 @@ import NotFound from '../components/pages/NotFound.jsx';
 import Home from '../components/pages/Home.jsx';
 import Playlist from '../components/pages/Playlist.jsx';
 import PlaylistPage from '../components/pages/PlaylistPage.jsx';
+import About from '../components/pages/About.jsx';
+import PrivacyPolicy from '../components/pages/PrivacyPolicy.jsx';
 
 import Signup from '../components/pages/auth/Signup.jsx';
 import Login from '../components/pages/auth/Login.jsx';
 
-import User from '../components/pages/users/User.jsx';
+import Profile from '../components/pages/users/Profile.jsx';
 
 class AppRouter extends Component {
   state = {
@@ -49,24 +51,18 @@ class AppRouter extends Component {
               <Route exact path="/" component={Home} />
               <Route 
                 path="/user/:id" 
-                render={(props) => (<User
+                render={(props) => (<Profile
                   props={props}
                   user={this.state.user}
                   handleLogin={this.handleLogin}
                 />)} 
               />
-              <Route 
-                path="/user/profile" 
-                render={(props) => (<User
-                  props={props}
-                  user={this.state.user}
-                  handleLogin={this.handleLogin}
-                />)}              
-              />
               <Route exact path="/playlist" component={Playlist} />
               <Route path="/playlist/:id" component={PlaylistPage} />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
+              <Route path="/about" component={About} />
+              <Route path="/privacy_policy" component={PrivacyPolicy} />
               <Route component={NotFound} />
             </Switch>
           </div>
