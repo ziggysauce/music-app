@@ -13,8 +13,10 @@ export default class Dashboard extends Component {
           {this.props.user ? <DashTopUser user={this.props.user}/> : <DashTopGuest/>}
           <div className="dash-nav">
             <NavLink to="/" className="nav-link">Listen</NavLink>
-            <NavLink to="/about" className="nav-link">About</NavLink>
-            <NavLink to="/privacy_policy" className="nav-link">Privacy Policy</NavLink>
+            <div className="dash-nav__additional">
+              <NavLink to="/about" className="nav-link">About</NavLink>
+              <NavLink to="/privacy_policy" className="nav-link">Privacy Policy</NavLink>
+            </div>
           </div>
         </div>
         <div className="dash-bottom">

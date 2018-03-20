@@ -9,8 +9,10 @@ export default class DashTopGuest extends Component {
           <p>Welcome, </p>
           <p>Cybernaut</p>
         </div>
-        <NavLink to="/signup" className="nav-link">Sign up</NavLink>
-        <NavLink to="/login" className="nav-link">Log in</NavLink>
+        <div>
+          <NavLink to="/signup" className="nav-link">Sign up</NavLink>
+          <NavLink to="/login" className="nav-link">Log in</NavLink>
+        </div>
 			</div>
 		);
   }

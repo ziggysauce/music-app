@@ -43,7 +43,7 @@
       margin: 0; 
 
       &:nth-of-type(2) {
-        font-size: 2em;
+        font-size: 2.5em;
         color: $link;
       }
     }
@@ -52,7 +52,16 @@
   .dash-nav {
     a {
       padding: 0.5em 0;
-      font-size: 1.3em;
+      font-size: 1.5em;
+    }
+  }
+
+  .dash-nav__additional {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      font-size: 0.8em;
     }
   }
 

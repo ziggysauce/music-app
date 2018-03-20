@@ -9,8 +9,10 @@ export default class DashTopUser extends Component {
           <p>Hello, </p>
           <p>{this.props.user}</p>
         </div>
-        <NavLink to="/user/profile" className="nav-link">Profile</NavLink>
-        <a href="/routes/logout" className="nav-link">Log out</a>
+        <div>
+          <NavLink to="/user/profile" className="nav-link">Profile</NavLink>
+          <a href="/routes/logout" className="nav-link">Log out</a>
+        </div>
       </div>
 		);
   }
